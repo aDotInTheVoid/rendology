@@ -1,0 +1,16 @@
+language: rust
+os:
+  - linux
+  - osx
+  - windows
+rust:
+  - stable
+  - beta
+  - nightly
+script:
+  - cargo test --verbose
+  - cargo run --example cube
+jobs:
+  allow_failures:
+    - rust: nightly
+  fast_finish: true
